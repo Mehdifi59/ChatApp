@@ -55,3 +55,15 @@ body{
     border: 1px solid rgb(0, 110, 255);
     border-radius: 2px;
 }
+
+.spanemoji button{
+    border: none;
+    height: 40px;
+    background-color: white;
+    letter-spacing: 2px;
+    
+}
+
+.spanemoji button:hover{
+    cursor: pointer;
+}
