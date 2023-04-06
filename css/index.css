@@ -36,6 +36,13 @@ body{
 .buttons button{
     width: 150px;
     height: 50px;
+    border: none;
+    background-color: rgb(240, 242, 248);
+    border-radius: 5px;
+}
+
+.buttons button:hover{
+    cursor: pointer;
 }
 
 .chat_list{
@@ -44,3 +51,7 @@ body{
     display: block;
 }
 
+.input_message input{
+    border: 1px solid rgb(0, 110, 255);
+    border-radius: 2px;
+}
