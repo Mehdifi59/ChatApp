@@ -11,29 +11,32 @@ const chat_list = document.getElementById('chat_list');
 const emojis = ["👍","👌","👏","🙏","🆗","🙂","😀","😃","😉","😊","😋","😌","😏","😐","😑","😒","😓","😂","🤣","😅","😆","😜","😹","🚶","👫","👬","👭","😙","😘","🏠","👆","🖕","👋","👎","👈","👉"];
 
 
-btn_send.onclick = function() {
 
+btn_send.onclick = function() {
+    const date = new Date();
     const li = document.createElement('li');
 
     if (msg_user.value != "" && msg_client.value !=""){
         alert("Veuillez entrer un message à la fois ! ");
-
+        return
 
     }if (msg_user.value == "" && msg_client.value == ""){
         alert("Veuillez entrer un message ! ");
-
+        return
+        
     }else if (msg_user.value != ""){
-        const br = document.createElement('br');
         li.appendChild(document.createTextNode("Vous : "));
-        li.appendChild(br);
         li.appendChild(document.createTextNode(msg_user.value));
+        li.appendChild(document.createElement('br'));
+        li.appendChild(document.createTextNode(date.getHours() + ':' +  date.getMinutes() + ':' + date.getSeconds()));
         chat_list.appendChild(li);
-
+        
     }else{
-        const br = document.createElement('br');
         li.appendChild(document.createTextNode("Client : "));
-        li.appendChild(br);
         li.appendChild(document.createTextNode(msg_client.value));
+        li.appendChild(document.createElement('br'));
+        li.appendChild(document.createTextNode(date.getHours() + ':' +  date.getMinutes() + ':' + date.getSeconds()));
         chat_list.appendChild(li);    
     }
 }
+
